@@ -1,10 +1,16 @@
 // import React from 'react'
-
+import { motion } from "framer-motion";
+import {fadeIn} from "../Utility/Animation"
 // import Tapdisplay from "../components/Tapdisplay";
 
 export default function MainPage() {
   return (
-    <div>
+    <motion.div
+    variants={fadeIn("down", 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+    
+    >
       <div className="ml-[10rem] max-2xl:ml-[5rem] max-xl:ml-12  mt-8 flex justify-between max-sm:justify-center max-lg:text-center  items-center max-sm:flex-col-reverse max-lg:flex-col-reverse  max-sm:ml-[0rem] max-lg:ml-[0rem] ">
         <div className="mt-[1rem] max-sm:mt-[3rem] max-lg:mt-[4rem] w-full max-sm:text-center">
           <h3 className="text-[#252b46] text-4xl font-bold leading-10 max-sm:text-3xl">
@@ -64,6 +70,6 @@ export default function MainPage() {
 
 
       </div>
-    </div>
+    </motion.div>
   );
 }

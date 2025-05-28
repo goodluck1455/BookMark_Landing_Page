@@ -1,4 +1,8 @@
 // import React from 'react'
+import { motion } from "framer-motion";
+import {fadeIn} from "../Utility/Animation"
+
+
 
 import Tapdisplay from "../components/Tapdisplay";
 import { useTabFeatureStore } from "../Store/useTabFeature";
@@ -138,7 +142,12 @@ type SubFeatureProps = {
 function SubFeature({ title, text, image, padding, titleSize }: SubFeatureProps) {
   return (
     <>
-      <div className="flex    gap-35 max-xl:gap-10 max-xl:flex-col max-sm:gap-10 max-lg:gap-10 mb-14 justify-center max-sm:flex-col max-lg:flex-col ">
+      <motion.div 
+             variants={fadeIn("left", 0.3, "zoom")}
+              initial="hidden"
+              whileInView={"show"}
+      
+      className="flex    gap-35 max-xl:gap-10 max-xl:flex-col max-sm:gap-10 max-lg:gap-10 mb-14 justify-center max-sm:flex-col max-lg:flex-col ">
         <Tapdisplay
           mainpage={
             "h-[18rem] height max-sm:h-[14rem] max-lg:h-[22rem] max-sm:w-full max-lg:w-[80%] rounded-br-full rounded-tr-full mt-[3rem] w-full "
@@ -161,7 +170,7 @@ function SubFeature({ title, text, image, padding, titleSize }: SubFeatureProps)
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

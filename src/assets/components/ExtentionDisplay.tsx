@@ -1,5 +1,6 @@
 // import React from 'react'
-
+import { motion } from "framer-motion";
+import {fadeIn} from "../Utility/Animation"
 
 type ExtentionDisplayProps = {
 marginTop: string;
@@ -12,7 +13,12 @@ paragraph: string
 
 export default function ExtentionDisplay({marginTop, image, title, paragraph}:ExtentionDisplayProps) {
   return (
-    <div>
+    <motion.div
+     variants={fadeIn("up", 0.3, "scale")}
+              initial="hidden"
+              whileInView={"show"}
+    
+    >
         <div className={`w-[13rem] h-[16.8rem] bg-[#f7f7f7] box-shawdow mb-[4rem]  ${marginTop}`}>
             <section>
             <div className="flex flex-col justify-center items-center">
@@ -36,6 +42,6 @@ export default function ExtentionDisplay({marginTop, image, title, paragraph}:Ex
 
         </div>
       
-    </div>
+    </motion.div>
   )
 }

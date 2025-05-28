@@ -39,12 +39,14 @@ const [email, setEmail] = useState("");
          <section className="mt-4 ">
           <form action="" onSubmit={handleSubmit} className="flex gap-3 justify-center  max-sm:flex-col">
 
-          <div className="max-sm:flex max-sm:justify-center max-sm:flex-col max-sm:items-center max-sm:px-4">
+          <div className="max-sm:flex relative max-sm:justify-center max-sm:flex-col max-sm:items-center max-sm:px-4">
               <input type="email" placeholder="Enter your email address" 
              value={email}
              onChange={(e) => setEmail(e.target.value)}
               
               className={`bg-[#f7f7f7] w-[20rem] rounded-[5px] border-transparent-3   ${error && "border-[#fa5757] border-3 rounded-tl-[5px] rounded-tr-[5px]  rounded-bl-[0px] rounded-br-[0px]"} outline-none p-3 text-gray-400 `} />
+               {error && (<img src="/images/icon-error.svg" alt="error" className="absolute right-3 top-1/3 transform -translate-y-1/2"/>)} 
+               
                {error && (<p className="bg-[#fa5757] text-white italic text-left pl-3.5 rounded-bl-[5px] rounded-br-[5px] max-sm:w-[20rem] ">
                {error}</p>)} 
           </div>
