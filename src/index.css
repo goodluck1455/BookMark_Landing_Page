@@ -1,0 +1,58 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap'); */
+
+@import "tailwindcss";
+
+
+
+body{
+    background-color: #f7f7f7;
+}
+
+
+/* 
+## Primary */
+:root{
+  --Blue-600: #5368df;
+--Red-400: #fa5757;
+--Grey-50: #f7f7f7;
+--Blue-950: #252b46;
+
+}
+
+body{
+  font-family: 'Rubik', sans-serif;
+}
+
+.box-shawdow{
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+ 
+}
+
+
+.tinted-border{
+  background-size: 10px 5px;
+  background-image: linear-gradient(to right, #ccc 50%, transparent 50%);
+  border: none;
+  height: 1px;
+}
+
+
+@media (min-width: 540px) and (max-width: 550px){
+  .padding{
+    /* padding-right: 5rem; */
+    margin-left: 2rem;
+  }
+  .height{
+    height: 18rem;
+  }
+  .padding_right{
+    padding-right: 8.2rem;
+  }
+}
+/* - Blue 600: hsl(231, 69%, 60%)
+- Red 400: hsl(0, 94%, 66%)
+
+### Neutral
+
+- Grey 50: hsl(0, 0%, 97%)
+- Blue 950: hsl(229, 31%, 21%) */
