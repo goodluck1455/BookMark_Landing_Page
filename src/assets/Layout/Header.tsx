@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import MobileNavBar from "../Pages/MobileNavBar";
 import { useTabFeatureStore } from "../Store/useTabFeature"
 
@@ -5,10 +6,31 @@ import { useTabFeatureStore } from "../Store/useTabFeature"
 export default function Header() {
  const {isOpen, toggle} = useTabFeatureStore();
 
+  const [scrolled, setScrolled] = useState(false)
+
+
+
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {  // Change background after 50px scroll
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   return (
-    <div>
-    <div className="mt-10 mx-42 max-xl:mx-20 flex items-center justify-between max-sm:mx-6 max-lg:mx-19 max-sm:mt-6">
+    <div className={`${scrolled && "bg-[#f7f7f7] shadow py-4 fixed w-screen"}  transition-all top-0 duration-300 z-50 `}>
+    <div className={` ${scrolled ? "mt-4 max-sm:mt-3": "mt-10"}  mx-42 max-xl:mx-20 flex items-center justify-between max-sm:mx-6 max-lg:mx-19 max-sm:mt-6`}>
         <div>
           <img src="/images/logo-bookmark.svg" alt="Page-Logo" className="w-full" />
         </div>

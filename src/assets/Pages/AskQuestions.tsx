@@ -2,6 +2,8 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import {fadeIn} from "../Utility/Animation"
 
 
 interface AccordionItemType {
@@ -60,7 +62,7 @@ export default function AskQuestions() {
   };
 
   return (
-    <div className="max-sm:px-5">
+    <div className="max-sm:px-5 overflow-x-hidden">
       <section>
         <div className="text-center mt-[3rem]">
           <h3 className="text-[#252b46] text-3xl font-semibold">
@@ -82,22 +84,7 @@ export default function AskQuestions() {
           onClick={() => toggleItem(item.id)}
         />
       ))}
-      {/* <OpenTabQuention />
-      <OpenTabQuention /> */}
-      {/* <section className="flex justify-center items-center mb-12 w-full mt-10">
-            <div className="border-gray-400/50  border-t border-b w-[30rem]  ">
-
-            <div className=" flex justify-between items-center gap-3.5  py-4">
-                <div> <h4 className="text-[#252b46] text-[1.1rem] font-semibold">What is Bookmark?</h4>   </div>
-                <div className="cursor-pointer mr-4" onClick={()=> setOpenTab(!openTab)}><img src="/images/icon-arrow.svg" alt="icon-arrow"  /></div>    
-            </div>
-               
-               {openTab && (<p className="mb-4 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, harum illum id asperiores, 
-                voluptates in repellendus exercitationem quidem 
-                fugit tempore eos dolores iusto nostrum vero quam quas temporibus, explicabo distinctio!</p>)}
-               
-             </div>
-          </section> */}
+     
 
       <section>
         <div className="mt-2 mb-11 flex justify-center items-center">
@@ -114,11 +101,17 @@ export default function AskQuestions() {
 }
 
 function OpenTabQuention({ item, isOpen, onClick }: AccordionItemProps) {
-  // const [openTab, setOpenTab] = useState(false);
+ 
 
   return (
     <>
-      <section className={`flex justify-center items-center ${item.custumClass}  w-full `}>
+      <motion.section 
+       variants={fadeIn("left", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+
+      
+      className={`flex justify-center items-center ${item.custumClass}  w-full `}>
         <div className={`border-gray-400/50   ${item.border}  w-[30rem]  `}>
           <div className=" flex group cursor-pointer justify-between items-center gap-3.5  py-2">
             <div>
@@ -146,7 +139,7 @@ function OpenTabQuention({ item, isOpen, onClick }: AccordionItemProps) {
             </p>
           )}
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
