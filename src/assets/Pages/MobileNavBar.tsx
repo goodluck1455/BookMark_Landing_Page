@@ -27,7 +27,7 @@ export default function MobileNavBar() {
         </div>
       </section>
 
-      <section className="px-7 max-lg:px-15 flex flex-col justify-between h-full py-12">
+      <section className="px-7 max-lg:px-15 flex flex-col gap-[15rem] pb-5 h-full py-12">
         <div>
           {  ["FEATURES", "PRICING", "CONTACT"].map((list)=>{
             return(
@@ -52,7 +52,7 @@ export default function MobileNavBar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-8  justify-center">
+        <div className="flex items-center gap-8  justify-center ">
           <img src="/images/icon-facebook.svg" alt="" />
           <img src="/images/icon-twitter.svg" alt="" />
         </div>
