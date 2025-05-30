@@ -27,7 +27,7 @@ export default function MobileNavBar() {
         </div>
       </section>
 
-      <section className="px-7 max-lg:px-15 flex flex-col gap-[15rem] pb-5 h-full py-12">
+      <section className="px-7 max-lg:px-15 flex flex-col gap-[12rem] pb-5 h-full py-12">
         <div>
           {  ["FEATURES", "PRICING", "CONTACT"].map((list)=>{
             return(
