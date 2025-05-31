@@ -4,7 +4,7 @@ import ExtentionDisplay from "../components/ExtentionDisplay";
 
 export default function Extentions() {
   return (
-    <div>
+    <div id="pricing">
         <section>
             <div className="text-center mt-[8rem]">
           <h3 className="text-[#252b46] text-3xl font-semibold max-sm:text-[1.732rem]">Download the extensions</h3>

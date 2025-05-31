@@ -4,19 +4,21 @@ import Features from "./assets/Pages/Features"
 import Extentions from "./assets/Pages/Extentions"
 import AskQuestions from "./assets/Pages/AskQuestions"
 import Footer from "./assets/Layout/Footer"
-
+import {   BrowserRouter } from 'react-router-dom';
 
 function App() {
  
 
   return (
     <>
+  <BrowserRouter>
     <Header />
     <MainPage />
     <Features />
     <Extentions />
     <AskQuestions />
     <Footer />
+    </BrowserRouter>
     </>
   )
 }

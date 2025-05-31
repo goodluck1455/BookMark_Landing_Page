@@ -28,7 +28,7 @@ const [email, setEmail] = useState("");
   };
 
   return (
-    <div>
+    <div id="contact">
       <div className="bg-[#5368df] text-center py-5 ">
         <section>
             <p className="text-white ">35,000+ Already Joined </p>

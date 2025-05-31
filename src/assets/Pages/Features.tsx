@@ -11,8 +11,8 @@ export default function Features() {
   const { openTab, setOpenTab } = useTabFeatureStore();
 
   return (
-    <div>
-      <section>
+    <div >
+      <section id="features">
         <div className="text-center mt-8 max-lg:mt-15">
           <h3 className="text-[#252b46] text-4xl font-semibold">Features</h3>
           <p className="text-gray-400 text-[1.2rem] mt-4 mb-6 max-sm:text-[1rem]">
@@ -142,25 +142,32 @@ type SubFeatureProps = {
 function SubFeature({ title, text, image, padding, titleSize }: SubFeatureProps) {
   return (
     <>
-      <motion.div 
-             variants={fadeIn("left", 0.3, "zoom")}
-              initial="hidden"
-              whileInView={"show"}
-      
-      className="flex    gap-35 max-xl:gap-10 max-xl:flex-col max-sm:gap-10 max-lg:gap-10 mb-14 justify-center max-sm:flex-col max-lg:flex-col ">
+      <motion.div
+        variants={fadeIn("left", 0.3, "zoom")}
+        initial="hidden"
+        whileInView={"show"}
+        className="flex    gap-35 max-xl:gap-10 max-xl:flex-col max-sm:gap-10 max-lg:gap-10 mb-14 justify-center max-sm:flex-col max-lg:flex-col "
+        id="features"
+      >
         <Tapdisplay
           mainpage={
             "h-[18rem] height max-sm:h-[14rem] max-lg:h-[22rem] max-sm:w-full max-lg:w-[80%] rounded-br-full rounded-tr-full mt-[3rem] w-full "
           }
           mainpageB={"mt-[-8rem] max-sm:mt-[-4rem]  right-[-4rem] padding"}
-          mainpageC={"pr-[4.3rem] max-xl:pr-[18.3rem] max-lg:pr-[4.3rem] padding_right max-sm:pr-[4.3rem]"}
+          mainpageC={
+            "pr-[4.3rem] max-xl:pr-[18.3rem] max-lg:pr-[4.3rem] padding_right max-sm:pr-[4.3rem]"
+          }
           image={image}
           padding={padding}
         />
 
         <div className="w-full max-sm:text-center max-lg:text-center max-xl:text-center ">
-          <h3 className={`text-[#252b46]  ${titleSize} font-semibold`}>{title}</h3>
-          <p className="text-gray-400 text-[1.2rem] max-sm:text-[1rem] mt-4">{text}</p>
+          <h3 className={`text-[#252b46]  ${titleSize} font-semibold`}>
+            {title}
+          </h3>
+          <p className="text-gray-400 text-[1.2rem] max-sm:text-[1rem] mt-4">
+            {text}
+          </p>
           <div className="mt-8 flex gap-3 max-sm:justify-center max-xl:justify-center max-sm:hidden">
             <button
               type="button"

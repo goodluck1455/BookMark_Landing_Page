@@ -9,7 +9,7 @@ export default function MainPage() {
     variants={fadeIn("down", 0.3)}
         initial="hidden"
         whileInView={"show"}
-    
+    id="home"
     >
       <div className="ml-[10rem] max-2xl:ml-[5rem] max-xl:ml-12  mt-8 flex justify-between max-sm:justify-center max-lg:text-center  items-center max-sm:flex-col-reverse max-lg:flex-col-reverse  max-sm:ml-[0rem] max-lg:ml-[0rem] ">
         <div className="mt-[1rem] max-sm:mt-[3rem] max-lg:mt-[4rem] w-full max-sm:text-center">
