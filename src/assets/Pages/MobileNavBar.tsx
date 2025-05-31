@@ -1,5 +1,6 @@
 // import React from 'react'
 
+import { HashLink } from "react-router-hash-link";
 import { useTabFeatureStore } from "../Store/useTabFeature";
 
 export default function MobileNavBar() {
@@ -30,15 +31,20 @@ export default function MobileNavBar() {
       <section className="px-7 max-lg:px-15 flex flex-col gap-[12rem] pb-5 h-full py-12">
         <div>
           {  ["FEATURES", "PRICING", "CONTACT"].map((list)=>{
-            return(
-                     <div className=" border-t-1 border-b-1 border-white/40 w-full text-center">
-            <button
-              type="button"
-              className={` text-[#f7f7f7] text-[1.2rem]  tracking-widest py-5`}>
-              {list}
-            </button>
-          </div>
-            )
+            return (
+              <div className=" border-t-1 border-b-1 border-white/40 w-full text-center">
+                <HashLink smooth to={`#${list.toLowerCase()}`}>
+                  
+                  <button
+                    type="button"
+                    className={` text-[#f7f7f7] text-[1.2rem]  tracking-widest py-5`}
+                    onClick={toggle}
+                  >
+                    {list}
+                  </button>
+                </HashLink>
+              </div>
+            );
           })
          }
 
